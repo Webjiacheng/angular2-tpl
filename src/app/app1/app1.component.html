@@ -1,0 +1,26 @@
+<div class="container app1_box">
+	<ul class="nav nav-tabs">
+	  <li role="presentation" 
+	  [class.active]="item.id==active_index" 
+	  *ngFor="let item of app1List"
+	  (click)="onClick(item.id)"><a href="javascript:;">{{item.name}}</a></li>
+	</ul>
+	<div class="container content_box"
+	[class.active]="item.id==active_index"
+	 *ngFor="let item of app1List"
+	 (click)="toDetail(item.id)">
+		<p><a href="javascript:;">{{item.desc}}</a></p>
+	</div>
+	<div class="form-group">
+    	<label for="tel">手机号码</label>
+    	<input type="number" #tel [(ngModel)]="phone" class="form-control" id="tel" placeholder="手机号码">
+  	</div>
+  	{{phone}}
+	<button (click)="getTest(tel.value)" class="btn btn-warning">查询</button>
+	<div class="form-group">
+    	<label for="time">时间</label>
+    	<input type="text" #time [(ngModel)]="pwd" class="form-control" id="time" placeholder="时间">
+  	</div>
+  	{{pwd}}
+	<button (click)="add()" class="btn btn-success">添加</button>
+</div>

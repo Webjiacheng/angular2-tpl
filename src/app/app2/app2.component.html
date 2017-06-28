@@ -1,0 +1,14 @@
+<div class="container" *ngFor="let item of app2List">
+	<h3>{{item.name}}</h3>
+	<span class="nav_left">
+	<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+	{{item.title}}
+	</span>
+	<span class="nav_right">
+	<span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+	{{item.time}}
+	</span>
+	<br/><hr>
+	<p class="desc">{{item.desc}}</p>
+	<button (click)="goBack()" type="button" class="btn btn-info">返回</button>
+</div>
